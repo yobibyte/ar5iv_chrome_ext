@@ -4,8 +4,8 @@ chrome.webRequest.onBeforeRequest.addListener(
     },
     {
         urls: [
-            "*://arxiv.org/pdf/*",
-            "*://www.arxiv.org/pdf/*"
+            "*://arxiv.org/pdf/*.pdf",
+            "*://www.arxiv.org/pdf/*.pdf"
         ],
     },
     ["blocking"]
