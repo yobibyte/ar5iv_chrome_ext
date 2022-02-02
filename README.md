@@ -4,9 +4,7 @@ This chrome extension will automatically replace arxiv.org/pdf/* links with ar5i
 
 ## Installation
 
-1. Clone the repo
-
-``` git@github.com:yobibyte/rct.git```
+1. Clone the repo `git@github.com:yobibyte/rct.git`
 
 2. Go to `chrome://extensions/` and turn on the developer mode
 
