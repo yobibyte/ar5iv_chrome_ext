@@ -1,0 +1,18 @@
+// logo taken from https://www.w3.org/html/logo/downloads/HTML5_Badge_128.png
+
+{
+  "name": "Ar5iv chrome extension",
+  "description": "Automatically replace arxiv links with ar5iv",
+  "version": "1.0",
+  "manifest_version": 2,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "webRequest",
+    "*://arxiv.org/*",
+    "*://www.arxiv.org/*",
+    "webRequestBlocking"
+  ],
+  "icons": {"128": "icon128.png"}
+}
