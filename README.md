@@ -22,4 +22,4 @@ https://arxiv.org/pdf/2010.01856.pdf
 https://arxiv.org/pdf/2010.01856.pdf?forcepdf
 
 ```
-Alternatively, you can click the icon to get back to the arxiv pdf from ar5iv.
+Alternatively, you can click the extension's icon to get back to the arxiv pdf from ar5iv.
