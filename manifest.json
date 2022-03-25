@@ -12,19 +12,26 @@
   "permissions": [
     "tabs",
     "webRequest",
+    "storage",
     "declarativeNetRequestWithHostAccess"
   ],
   "host_permissions": [
     "*://arxiv.org/*",
     "*://www.arxiv.org/*",
     "*://ar5iv.org/*",
+    "*://ar5iv.labs.arxiv.org/*",
     "*://www.ar5iv.org/*"
   ],
   "declarative_net_request": {
     "rule_resources": [{
-      "id": "ruleset_1",
+      "id": "arxiv_to_ar5iv",
       "enabled": true,
-      "path": "rules.json"
+      "path": "arxiv_to_ar5iv.json"
+    },
+    {
+      "id": "ar5iv_to_arxiv",
+      "enabled": true,
+      "path": "ar5iv_to_arxiv.json"
     }]
   },
   "icons": {"128": "icon128.png"}

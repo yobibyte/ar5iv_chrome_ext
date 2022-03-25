@@ -1,26 +1,26 @@
-var manual_switch = false; // flag set to true when the extension icon has been clicked
+var isEnabled = true;
+chrome.storage.sync.get(/* String or Array */["ar5iv_enabled"], function(result){
+    isEnabled = result.ar5iv_enabled;
+});
 
-// Callback intercepts initial arxiv page load and switches to ar5iv
-//depricated for now, since  chrome store now forces manifest v3 which forces to not use blocking webRequestListeners
-//TODO: reanable "?forcepdf""
-// var callback = function(details) {
-//     if (details.url.endsWith("?forcepdf") || manual_switch) {
-//         return;
-//     }
-//     return {redirectUrl: details.url.replace("arxiv", "ar5iv")};
-// }
-// var filter= {urls: ["*://arxiv.org/pdf/*", "*://www.arxiv.org/pdf/*"]}
-// chrome.webRequest.onBeforeRequest.addListener(callback, filter, ["blocking"]);
+const setIcon = function(){
+    chrome.action.setIcon({path: isEnabled ? "icon128.png" : "icon_nope128.png"});
+}
+
+const storeSetting = function(){
+    chrome.storage.sync.set({ar5iv_enabled: isEnabled}, function(){});
+}
 
 // When the extension icon is clicked, switch back to pdf / ar5iv 
-// TODO icon depending on which is being viewed
 var switch_view = function(tab) {
-    manual_switch = true;
-    if (tab.url.includes("arxiv.org/pdf/"))   { // arxiv -> ar5iv
-        chrome.tabs.update(tab.id, {url: tab.url.replace("arxiv", "ar5iv")});
-    } else if (tab.url.includes("ar5iv")) { // ar5iv -> arxiv
-        chrome.tabs.update(tab.id, {url: tab.url.replace("ar5iv.org/html/", "arxiv.org/pdf/")});
-        chrome.tabs.update(tab.id, {url: tab.url.replace("ar5iv.labs.arxiv.org/html/", "arxiv.org/pdf/")});
+    if (!isEnabled)   { // arxiv -> ar5iv
+        chrome.declarativeNetRequest.updateEnabledRulesets({enableRulesetIds: ["arxiv_to_ar5iv"], disableRulesetIds: ["ar5iv_to_arxiv"]}, function() {});
+    } else { // ar5iv -> arxiv        
+        chrome.declarativeNetRequest.updateEnabledRulesets({enableRulesetIds: ["ar5iv_to_arxiv"], disableRulesetIds: ["arxiv_to_ar5iv"]});
     }
+    isEnabled ^= true;
+    setIcon();
+    chrome.tabs.reload(tab.id);
+    storeSetting();
 }
 chrome.action.onClicked.addListener(tab => switch_view(tab));

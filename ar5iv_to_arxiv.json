@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://arxiv.org/pdf/"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https://ar5iv\\.labs\\.arxiv\\.org/html/",
+      "resourceTypes": ["main_frame"]
+    }
+  }
+]
