@@ -9,7 +9,7 @@
       }
     },
     "condition": {
-      "regexFilter": "^https://ar5iv\\.labs\\.arxiv\\.org/html/",
+      "regexFilter": "^https://(www\\.)?ar5iv(\\.labs\\.arxiv)?\\.org/html/",
       "resourceTypes": ["main_frame"]
     }
   }
