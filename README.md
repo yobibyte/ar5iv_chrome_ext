@@ -12,14 +12,8 @@ This chrome extension will automatically replace arxiv.org/pdf/* links with ar5i
 
 ## Usage
 
-The extension will automatically replace Arxiv pdf links with ar5iv. If you want to still load the pdf, add the `?forcepdf` to the link:
+The extension will automatically replace arxiv pdf links with ar5iv html links per default.
+You can click the extension's icon to toggle this behavior.
 
-```
-# this will open ar5iv
-https://arxiv.org/pdf/2010.01856.pdf
-
-# this will open a pdf file
-https://arxiv.org/pdf/2010.01856.pdf?forcepdf
-
-```
-Alternatively, you can click the extension's icon to get back to the arxiv pdf from ar5iv.
+- if the icon is crossed out, the extension will always load pdfs (replace ar5iv html links with arxiv pdf links).
+- if the icon is not crossed out, the extension will always load html (replace arxiv pdf links with ar5iv html links).
