@@ -3,7 +3,7 @@
 {
   "name": "arxiv -> ar5iv",
   "description": "Automatically replace arxiv links with ar5iv",
-  "version": "1.0",
+  "version": "1.0.0.1",
   "manifest_version": 2,
   "background": {
     "scripts": ["background.js"],
