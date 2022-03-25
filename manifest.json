@@ -1,5 +1,3 @@
-// logo taken from https://www.w3.org/html/logo/downloads/HTML5_Badge_128.png
-
 {
   "name": "arxiv -> ar5iv",
   "description": "Automatically replace arxiv links with ar5iv",
