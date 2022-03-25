@@ -1,7 +1,7 @@
 {
   "name": "arxiv -> ar5iv",
   "description": "Automatically replace arxiv links with ar5iv",
-  "version": "1.0.0.1",
+  "version": "1.0.0.2",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"
