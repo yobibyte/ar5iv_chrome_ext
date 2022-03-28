@@ -20,7 +20,9 @@ var switch_view = function(tab) {
     }
     isEnabled ^= true;
     setIcon();
-    chrome.tabs.reload(tab.id);
     storeSetting();
+    if (tab.url.match(/^https:\/\/(www\.)?(ar5iv\.labs\.)?ar(x|5)iv\.org\/((pdf)|(html))/)) {
+        chrome.tabs.reload(tab.id);
+    }
 }
 chrome.action.onClicked.addListener(tab => switch_view(tab));
