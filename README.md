@@ -4,11 +4,7 @@ This chrome extension will automatically replace arxiv.org/pdf/* links with ar5i
 
 ## Installation
 
-1. Clone the repo `git@github.com:yobibyte/ar5iv_chrome_ext.git`
-
-2. Go to `chrome://extensions/` and turn on the developer mode
-
-3. Press to `Load unpacked` and select the repo folder to open.
+simply download [here](https://chrome.google.com/webstore/detail/arxiv-%3Ear5iv/ledhlnbblmkmfdckpmolbpocibcanfda)
 
 ## Usage
 
